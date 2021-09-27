@@ -175,7 +175,7 @@ The default properties for the schedule trigger are to fire the flow once every 
 
 _Figure 21 – Setting the schedule trigger_
 
-Press save. Once you are happy that it's working, delete the recurrence trigger and change the trigger to be as per figure 4. 
+Press save. Once you are happy that it's working, delete the recurrence trigger and change the trigger back to the RSS feed as per figure 4. 
 
 ## Further considerations
 

@@ -103,27 +103,25 @@ This second HTTP action is to get a nicely formatted list of changes. It is usin
 
 The URI for this HTTP GET is going to be more complex than in the first HTTP GET action as it includes a dynamic parameter. Enter the first part of the URI as:
 
-https://endpoints.office.com/changes/worldwide/
+https://o365ipurl.ambor.com/?ver=
 
 Then click Expression in the expanded right properties window and enter a reference to the second version item from the Parse JSON action. This selects the version prior to the current version so that you can see the latest changes.
 
 **body(**&#39;Parse\_JSON&#39;**)**?[&#39;versions&#39;][1]
 
-![alt text](img/image014.jpg "Figure 14")
+![alt text](img/image014.png "Figure 14")
 
 _Figure 14 – First part of URI entered_
 
-Click OK to accept the Expression and then enter the second part of the URI.
+Click OK to accept the Expression.
 
-?clientrequestid=bad1f103-bad1-f103-0123-456789abcdef
-
-![alt text](img/image015.jpg "Figure 15")
+![alt text](img/image015.png "Figure 15")
 
 _Figure 15 – Expression and second part of URI entered_
 
 Select + New step and search for the Office 365 Send an email action.
 
-![alt text](img/image016.jpg "Figure 16")
+![alt text](img/image016.png "Figure 16")
 
 _Figure 16 – Searching for the send an email action_
 
@@ -138,7 +136,7 @@ The second part of the subject will be the version number that we just found. Wi
 **body(**&#39;Parse\_JSON&#39;**)**?[&#39;latest&#39;]
 
 
-![alt text](img/image017.jpg "Figure 17")
+![alt text](img/image017.png "Figure 17")
 
 _Figure 17 – Searching for the send an email action_
 
@@ -146,7 +144,7 @@ Next select OK to enter the expression into the Subject and do the same thing fo
 
 &quot;Changes to Office 365 IP Address and/or URLs have been published. Here is the change log.&quot;
 
-![alt text](img/image018.jpg "Figure 18")
+![alt text](img/image018.png "Figure 18")
 
 _Figure 18 – The email action with the subject complete and the static text entered in the body_
 

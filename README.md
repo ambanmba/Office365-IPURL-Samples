@@ -36,6 +36,8 @@ There are two parameters for the RSS trigger: the URL to look up and when it wil
 
 https://endpoints.office.com/version/worldwide?format=rss&AllVersions&clientrequestid=bad1f103-bad1-f103-0123-456789abcdef
 
+Strictly speaking, Microsoft wants you not to use this example ClientRequestID (bad1f103-bad1-f103-0123-456789abcdef) that you see in the URL. When you use the Cloudflare Worker that I describe below, it will automatically randomise a new ClientRequestID with each request. You could use one of them (displayed each time you run it) or just use this example one.
+
 ![alt text](img/image004.png "Figure 4")
 
 _Figure 4 - Configured RSS trigger_

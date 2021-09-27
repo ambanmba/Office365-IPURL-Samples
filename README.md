@@ -99,11 +99,11 @@ Add a second HTTP action and configure it for a GET operation.
 
 _Figure 13 - Add a new HTTP action_
 
-This second HTTP action is to get a nicely formatted list of changes. It is using a Cloudflare Worker so there is will work as-is in these instructions, but if you would like to see the code running in the worker (or set up your own) that is also included in this repository. The worker I have set up is available at https://o365ipurl.ambor.com/. If you just use the base URL you will get a list of every change, if you add a version search to the URL you will get all changes from a particular version (e.g. https://o365ipurl.ambor.com/?ver=2021072900). The next part of these instructions are to generate the correct URL to get all changes since the last version.
+This second HTTP action is to get a nicely formatted list of changes. It is using a Cloudflare Worker so all of this will work as-is per these instructions, but if you would like to see the code running in the worker (or set up your own Worker) that is also included in this repository. The worker I have set up is available at https://o365ipurl.ambor.com/. If you just use the base URL you will get a list of every change, if you add a version search to the URL you will get all changes from a particular version (e.g. https://o365ipurl.ambor.com/?ver=2021072900). The next part of these instructions are to generate the correct URL to get all changes since the last version.
 
 The URI for this HTTP GET is going to be more complex than in the first HTTP GET action as it includes a dynamic parameter. Enter the first part of the URI as:
 
-https://o365ipurl.ambor.com/?ver=
+https://o365ipurl.ambor.com/?ver= 
 
 Then click Expression in the expanded right properties window and enter a reference to the second version item from the Parse JSON action. This selects the version prior to the current version so that you can see the latest changes.
 
@@ -117,7 +117,7 @@ Click OK to accept the Expression.
 
 ![alt text](img/image015.png "Figure 15")
 
-_Figure 15 – Expression and second part of URI entered_
+_Figure 15 – Complete URL with the Expression entered_
 
 Select + New step and search for the Office 365 Send an email action.
 
@@ -127,7 +127,7 @@ _Figure 16 – Searching for the send an email action_
 
 Select the Send an email (V2) action.
 
-Configure the Send an email action with your own email to address. Enter a subject line in two parts. The first part is static:
+Configure the Send an email action with your own email to address (or any other that you prefer). Enter a subject line in two parts. The first part is static:
 
 New Office 365 IPURL changes were published
 
@@ -148,21 +148,11 @@ Next select OK to enter the expression into the Subject and do the same thing fo
 
 _Figure 18 – The email action with the subject complete and the static text entered in the body_
 
-Select the HTTP 2 action Body for the rest of the email body.
+Select the HTTP 2 action Body for the rest of the email body. You are complete and can now save the flow. Click on the save button at the bottom of the flow_
 
-![alt text](img/image019.jpg "Figure 19")
+![alt text](img/image019.png "Figure 19")
 
-_Figure 19 – The completed email action. Please substitute your own email address_
-
-You are complete and can now save the flow.
-
-![alt text](img/image020.jpg "Figure 20")
-
-_Figure 20 – The save button at the bottom of the flow_
-
-![alt text](img/image021.jpg "Figure 21")
-
-_Figure 21 – The completed flow_
+_Figure 21 – The completed flow should look something like this_
 
 
 

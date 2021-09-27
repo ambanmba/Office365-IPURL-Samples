@@ -99,9 +99,7 @@ Add a second HTTP action and configure it for a GET operation.
 
 _Figure 13 - Add a new HTTP action_
 
-
-
-This second HTTP action is to get the list of changes that were published in the latest update. We will configure this to get the JSON format data and include that in the notification email first. Later we will come back and update this HTTP action to get English formatted text describing the changes. Those are added later because there is more work to create them than just to include the JSON format data.
+This second HTTP action is to get a nicely formatted list of changes. It is using a Cloudflare Worker so there is will work as-is in these instructions, but if you would like to see the code running in the worker (or set up your own) that is also included in this repository. The worker I have set up is available at https://o365ipurl.ambor.com/. If you just use the base URL you will get a list of every change, if you add a version search to the URL you will get all changes from a particular version (e.g. https://o365ipurl.ambor.com/?ver=2021072900). The next part of these instructions are to generate the correct URL to get all changes since the last version.
 
 The URI for this HTTP GET is going to be more complex than in the first HTTP GET action as it includes a dynamic parameter. Enter the first part of the URI as:
 

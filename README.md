@@ -4,7 +4,7 @@ Improvements include: 1) Updated screen shots that reflected changes in Microsof
 
 ## Step 1 – Sign up for Microsoft Power Automate
 
-Power Automate requires sign-up. I&#39;ve only used free elements in Power Automate for this. You can read about the sign-up process and the free and paid plans at [https://docs.microsoft.com/en-us/power-automate/sign-up-sign-in](https://docs.microsoft.com/en-us/power-automate/sign-up-sign-in)
+Power Automate requires sign-up. You can read about the sign-up process and the pricing at [https://docs.microsoft.com/en-us/power-automate/sign-up-sign-in](https://docs.microsoft.com/en-us/power-automate/sign-up-sign-in)
 
 Once you&#39;ve signed up you can go to Power Automate at [https://flow.microsoft.com](https://flow.microsoft.com/)
 
@@ -155,4 +155,28 @@ Select the HTTP 2 action Body for the rest of the email body. You are complete a
 _Figure 21 – The completed flow should look something like this_
 
 
+## Step 5 – Testing and troubleshooting the flow
 
+The flow only triggers when a new RSS article is published, and this only occurs one or two times a month so it&#39;s important to be able to have some means to test the flow. To do this we will delete the RSS trigger and replace it with a Recurrence trigger that fires every minute. If the flow is working, you will get an email every minute due to the Recurrence firing and that email will include the most recent changes. When you have this working, delete the Recurrence trigger and put back the RSS trigger.
+
+![alt text](img/image020.png "Figure 20")
+
+_Figure 20 – The menu to delete the RSS trigger_
+
+Select Delete. Once this is deleted you will be prompted to add a new trigger. Enter Schedule in the search box and select the Recurrence Schedule activity.
+
+![alt text](img/image021.png "Figure 21")
+
+_Figure 21 – Adding the schedule trigger_
+
+The default properties for the schedule trigger are to fire the flow once every 3 minutes. Leave it like that or change it to every 1 minute for faster cycling. You should receive an email within a minute containing the latest changes. Now you can observe the flow executing, look at data accessed by each activity and do any needed troubleshooting in execution logs.
+
+![alt text](img/image022.png "Figure 22")
+
+_Figure 21 – Setting the schedule trigger_
+
+Press save. Once you are happy that it's working, delete the recurrence trigger and change the trigger to be as per figure 4. 
+
+## Further considerations
+
+If you would like to avoid relying on my Cloudflare worker, feel free to take the Javascript and deploy it either in your own Cloudflare worker or elsewhere. In my organisation I have this e-mail configured to trigger a Jira ticket so the operations team can update the firewall settings as they change by Microsoft. Since Microsoft has changed the pricing for Power Automate, the HTTP action is no longer free. The cost is low, but if you want to use another serivce such as IFTTT it should be easy to adapt these instructions to have a fully free service.
